@@ -41,7 +41,8 @@ For example:
       "foreignKey": "physicianId",
       "through": "Appointment"
     },
-  ...```
+```
+
 # common/models/patient.json
 ```
 {  
@@ -61,6 +62,7 @@ For example:
       "through": "Appointment"
     },...
 ```
+
 # common/models/appointment.json
 ```{  
   "name": "Appointment",
@@ -83,8 +85,10 @@ For example:
       "foreignKey": "patientId"
     }
 ```
+
 # Create the physicians via 
-```POST : http://localhost:3000/api/physicians
+```
+POST : http://localhost:3000/api/physicians
 Body : [{"key":"name","value":"doctor1"}]
 Result : {
     "name": "doctor1",
@@ -97,7 +101,8 @@ Result : {
 }
 ```
 # Create the patient via 
-```POST : http://localhost:3000/api/patients
+```
+POST : http://localhost:3000/api/patients
 BODY : [{"key":"name","value":"p1"}]
 RESULT : {
     "name": "p1",
@@ -111,26 +116,28 @@ RESULT : {
 ```
 
 #  Create the appointment via 
-```POST : http://localhost:3000/api/appointments
+```
+POST : http://localhost:3000/api/appointments
 BODY : [{"key":"patientId","value":"1"},{"key":"physicianId","value":"1"},{"key":"appointmentDate","value":"2017-06-01"}]
 RESULT : {
     "appointmentDate": "2017-06-01T00:00:00.000Z",
     "id": 1,
     "physicianId": 1,
     "patientId": 1
-}```
+}
 
-```BODY : [{"key":"patientId","value":"2"},{"key":"physicianId","value":"1"},{"key":"appointmentDate","value":"2017-06-01"}]
+BODY : [{"key":"patientId","value":"2"},{"key":"physicianId","value":"1"},{"key":"appointmentDate","value":"2017-06-01"}]
 RESULT : {
     "appointmentDate": "2017-06-01T00:00:00.000Z",
     "id": 2,
     "physicianId": 1,
     "patientId": 2
-}```
-
+}
+```
 
 #  Getting MAny to Many reslut via 
-```GET : http://localhost:3000/api/appointments?filter={"include":["patient","physician"],"where":{"physicianId":1}}
+```
+GET : http://localhost:3000/api/appointments?filter={"include":["patient","physician"],"where":{"physicianId":1}}
 RESULT : [
     {
         "appointmentDate": "2017-06-01T00:00:00.000Z",
@@ -161,8 +168,6 @@ RESULT : [
         }
     }
 ]
-
-
 ```
 
 
