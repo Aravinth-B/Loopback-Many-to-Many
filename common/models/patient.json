@@ -1,0 +1,24 @@
+{
+  "name": "patient",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "physicans": {
+      "type": "hasMany",
+      "model": "physician",
+      "foreignKey": "patientId",
+      "through": "appointment"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
