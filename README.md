@@ -59,7 +59,8 @@ For example:
       "model": "Physician",
       "foreignKey": "patientId",
       "through": "Appointment"
-    },...```
+    },...
+```
 # common/models/appointment.json
 ```{  
   "name": "Appointment",
@@ -81,7 +82,7 @@ For example:
       "model": "Patient",
       "foreignKey": "patientId"
     }
-``````
+```
 # Create the physicians via 
 ```POST : http://localhost:3000/api/physicians
 Body : [{"key":"name","value":"doctor1"}]
@@ -108,6 +109,7 @@ RESULT : {
     "id": 2
 }
 ```
+
 #  Create the appointment via 
 ```POST : http://localhost:3000/api/appointments
 BODY : [{"key":"patientId","value":"1"},{"key":"physicianId","value":"1"},{"key":"appointmentDate","value":"2017-06-01"}]
