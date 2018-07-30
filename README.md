@@ -135,7 +135,7 @@ RESULT : {
 }
 ```
 
-#  Getting MAny to Many reslut via 
+#  Getting Many to Many result via 
 ```
 GET : http://localhost:3000/api/appointments?filter={"include":["patient","physician"],"where":{"physicianId":1}}
 RESULT : [
